@@ -22,4 +22,6 @@ int obtenerEdadPaciente(tPaciente p);
 void obtenerTelefonoPaciente(tPaciente p, tString telefono);
 void obtenerHistorialMedico(tPaciente p, tString historial);
 void mostrarPaciente(tPaciente p);
+void guardarPaciente(tPaciente);
+void mostrarPacientes();
 
