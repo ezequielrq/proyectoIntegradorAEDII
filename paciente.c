@@ -51,3 +51,38 @@ void mostrarPaciente(tPaciente p){
     printf("Historial Medico: %s\n", p.historialMedico);
     printf("===========================================\n");
 }
+
+void guardarPaciente(tPaciente p) {
+
+    FILE *archivoPacientes;
+
+    archivoPacientes = fopen("pacientes.dat", "ab");
+
+    if(archivoPacientes == NULL) {
+        printf("Error al abrir el archivo");
+        exit(1);
+    }
+
+    fwrite(&p, sizeof(tPaciente), 1, archivoPacientes);
+
+    fclose(archivoPacientes);
+}
+
+void mostrarPacientes() {
+
+    FILE *archivoPacientes;
+    tPaciente paciente;
+
+    archivoPacientes = fopen("pacientes.dat", "rb");
+
+    if(archivoPacientes == NULL) {
+        printf("No se pudo abrir el archivo");
+        return;
+    }
+
+    while(fread(&paciente, sizeof(tPaciente), 1, archivoPacientes) == 1) {
+        mostrarPaciente(paciente);
+    }
+
+    fclose(archivoPacientes);
+}
