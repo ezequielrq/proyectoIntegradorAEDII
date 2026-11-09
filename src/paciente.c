@@ -2,7 +2,7 @@
 
 // Implementacion de funciones
 
-tPaciente altaPaciente(long pDni, tString pNombreApellido, int pEdad, tString pTelefono, tString pHistorialMedico){
+tPaciente ingresarPaciente(long pDni, tString pNombreApellido, int pEdad, tString pTelefono, tString pHistorialMedico){
 	
 	tPaciente nuevoPaciente;
 	
